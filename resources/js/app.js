@@ -1,4 +1,4 @@
-class App {
+export default class App {
     constructor() {
         this.images = new Set();
         this.image = null;
@@ -253,12 +253,3 @@ class App {
         }
     }
 }
-
-const app = new App();
-app.setCanvas($("#canvas").get(0));
-app.loadImages(images);
-app.render();
-
-$('select.changeImage').on('change', function() {
-    app.setImage($(this).val());
-})

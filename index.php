@@ -6,10 +6,13 @@
     // HOME PAGE
     if (!$project_name || !file_exists($file)) {
         $projects = array_diff(scandir("projects"), array('.', '..'));
+        echo '<h3>Projects list</h3><ul>';
         foreach ($projects as $project) {
             $project = str_replace('.json', '', $project);
-            echo '<a href="?project='.$project.'">'.$project.'</a><br>';
+            echo '<li><a href="?project='.$project.'">'.$project.'</a></li>';
         }
+        echo '</ul>';
+        echo '<h3>Scraper</h3><ul><li><a href="scraper.php">Project scraper</a></li></ul>';
         die();
     }
     // PROJECT PAGE
@@ -26,7 +29,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects Viewer</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/styles.css">
 </head>
 <body>
     
@@ -53,8 +56,8 @@
         </main>
     </div>
 
-    <script src="jquery-3.6.0.min.js"></script>
-    <script src="app.js"></script>
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <script src="main.js" type="module"></script>
 
 </body>
 </html>
